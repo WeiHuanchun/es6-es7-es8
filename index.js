@@ -1,6 +1,1 @@
-const example = {}
-
-example.firstName = "Harry"
-console.log(example) // { firstName: 'Harry' }
-
-
+export const data = [1, 2, 3];
