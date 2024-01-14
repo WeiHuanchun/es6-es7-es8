@@ -1,8 +1,6 @@
-let incomes = [62000, 67000, 75000]
-let total = 0
+const example = {}
 
-for (let income of incomes) {
-    income += 5000
-}
+example.firstName = "Harry"
+console.log(example) // { firstName: 'Harry' }
 
-console.log(incomes) // [ 62000, 67000, 75000 ]
+
