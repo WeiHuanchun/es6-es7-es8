@@ -3,8 +3,8 @@
 ## Template Literals
 
 ```js
-let word1 = 'Dylan';
-let word2 = 'Isreal';
+let word1 = "Dylan";
+let word2 = "Isreal";
 let num1 = 2;
 let num2 = 3;
 
@@ -16,10 +16,10 @@ console.log(fullName);
 
 ```js
 const personalInformation = {
-    firstName: 'John',
-    lastName: 'Doe',
-    city: 'Boston',
-    state: 'MA',
+    firstName: "John",
+    lastName: "Doe",
+    city: "Boston",
+    state: "MA",
     zipCode: 123456,
 };
 
@@ -34,9 +34,9 @@ console.log(`${fn} ${ln}`); // John Doe
 ## Destructuring Arrays
 
 ```js
-let [firstName, middleName, lastName] = ['John', 'Quincy', 'Adams'];
+let [firstName, middleName, lastName] = ["John", "Quincy", "Adams"];
 
-lastName = 'Clements';
+lastName = "Clements";
 
 console.log(firstName); // John
 console.log(lastName); // Clements
@@ -50,14 +50,14 @@ function addressMaker(city, state) {
     console.log(newAddress);
 }
 
-addressMaker('Austin', 'Texas'); // {newCity: 'Austin', newState: 'Texas'}
+addressMaker("Austin", "Texas"); // {newCity: 'Austin', newState: 'Texas'}
 
 function usernameMaker(firstName, lastName) {
     const newUsername = { firstName, lastName };
     console.log(newUsername);
 }
 
-usernameMaker('John', 'Doe'); // {firstName: 'John', lastName: 'Doe'}
+usernameMaker("John", "Doe"); // {firstName: 'John', lastName: 'Doe'}
 ```
 
 ## Object Literal(Challenge)
@@ -67,7 +67,7 @@ function addressMaker(address) {
     const newAddress = {
         city: address.city,
         state: address.state,
-        country: 'United States',
+        country: "United States",
     };
     console.log(newAddress);
 }
@@ -79,14 +79,14 @@ function addressMaker(address) {
     const newAddress = {
         city,
         state,
-        country: 'United States',
+        country: "United States",
     };
     console.log(
-        `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`
+        `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`,
     );
 }
 
-addressMaker({ city: 'Austin', state: 'Texas' }); // Austin, Texas, United States
+addressMaker({ city: "Austin", state: "Texas" }); // Austin, Texas, United States
 ```
 
 ## For of Loop
@@ -111,7 +111,7 @@ console.log(total);
 ```
 
 ```js
-let fullName = 'Dylan Coding God Israel';
+let fullName = "Dylan Coding God Israel";
 
 for (const char of fullName) {
     console.log(char);
@@ -177,11 +177,11 @@ console.log(example2); // [1, 2, 3, 4, 5, 6, true]
 
 ```js
 let example1 = {
-    firstName: 'Jason',
+    firstName: "Jason",
 };
 
 let example2 = {
-    lastName: 'N/A',
+    lastName: "N/A",
     ...example1,
 };
 
@@ -350,7 +350,7 @@ Node.js v21.5.0
 ```js
 const example = {};
 
-example.firstName = 'Harry';
+example.firstName = "Harry";
 console.log(example); // { firstName: 'Harry' }
 ```
 
@@ -368,7 +368,7 @@ console.log(example); // { firstName: 'Harry' }
 
     ```js
     // index.js
-    const data = require('./example.js');
+    const data = require("./example.js");
 
     console.log(data); // [1,2,3]
 
@@ -392,7 +392,7 @@ console.log(example); // { firstName: 'Harry' }
     ```
 
     ```js
-    import { data } from './example.js';
+    import { data } from "./example.js";
 
     console.log(data); // [1, 2, 3]
     ```
@@ -400,21 +400,21 @@ console.log(example); // { firstName: 'Harry' }
 ## `padStart()` & `padEnd()`
 
 ```js
-let example = 'Dylan';
+let example = "Dylan";
 
-console.log(example.padStart(10, 'a')); // aaaaaDylan
+console.log(example.padStart(10, "a")); // aaaaaDylan
 ```
 
 ```js
-let example = 'Dylan';
+let example = "Dylan";
 
-console.log(example.padEnd(10, 'a')); // Dylanaaaaa
+console.log(example.padEnd(10, "a")); // Dylanaaaaa
 ```
 
 ## `padStart()` & `padEnd()` (Chanllenge)
 
 ```js
-let example = 'YouTube.com/67373';
+let example = "YouTube.com/67373";
 
 console.log(example.padStart(100)); // 100 is the total length of the string
 console.log(example.padEnd(1)); // YouTube.com/67373
@@ -431,7 +431,7 @@ export class Animal {
         this.legs = legs;
     }
 
-    makeNoise(sound = 'Loud Noise') {
+    makeNoise(sound = "Loud Noise") {
         console.log(sound);
     }
     get metaData() {
@@ -448,7 +448,7 @@ export class Cat extends Animal {
         super(type, legs);
         this.tail = tail;
     }
-    makeNoise(sound = 'meow') {
+    makeNoise(sound = "meow") {
         console.log(sound);
     }
 }
@@ -456,9 +456,9 @@ export class Cat extends Animal {
 
 ```js
 // index.js
-import { Animal, Cat } from './example.js';
+import { Animal, Cat } from "./example.js";
 
-let cat = new Animal('Cat', 4);
+let cat = new Animal("Cat", 4);
 
 console.log(cat); // Animal { type: 'Cat', legs: 4 }
 console.log(cat.legs); // 4
@@ -468,14 +468,148 @@ cat.legs = 3;
 console.log(cat.legs); // 3
 
 cat.makeNoise(); // Loud Noise
-cat.makeNoise('Meow'); // Meow
+cat.makeNoise("Meow"); // Meow
 
 console.log(Animal.return10()); // 10
 
 console.log(cat.metaData); // Type: Cat, Legs: 3
 
-let tiger = new Cat('Tiger', 4, 1);
+let tiger = new Cat("Tiger", 4, 1);
 
 tiger.makeNoise(); // meow
 console.log(tiger.metaData); // Type: Tiger, Legs: 4
+```
+
+## Trailing Commas
+
+```js
+function add(param1) {
+    const example = {
+        name: "Dylan",
+    };
+
+    console.log(example);
+}
+
+add(); // { name: 'Dylan' }
+```
+
+> Trailing commas (also known as dangling commas or terminal commas) are commas that you place at the end of a line of code where they're syntactically allowed but not required. They are used in objects, arrays, and function parameters.
+>
+> Here's an example in an object:
+>
+> ```javascript
+> const obj = {
+>     prop1: "value1",
+>     prop2: "value2",
+> };
+> ```
+>
+> And in an array:
+>
+> ```javascript
+> const arr = ["element1", "element2"];
+> ```
+>
+> And in a function's parameters:
+>
+> ```javascript
+> function func(param1, param2) {
+>     // function body
+> }
+> ```
+>
+> The main benefits of trailing commas are:
+>
+> 1. Version Control Systems like Git show cleaner diffs when elements are added or removed from objects, arrays, or function parameters.
+> 2. It makes reordering elements easier because you don't have to add or remove commas when moving the last element.
+> 3. It can prevent some simple syntax errors in JavaScript, where a missing comma can cause two lines to be interpreted as one.
+>
+> Starting from ES8 (ECMAScript 2017), trailing commas are allowed in function parameter lists.
+
+## Async & Await
+
+```js
+const apiUrl = "http://www.bilibili.com";
+
+function getBilibili() {
+    fetch(apiUrl)
+        .then((response) => response.text())
+        .then((data) => {
+            console.log(data);
+        })
+        .catch((error) => console.log(error));
+}
+
+getBilibili();
+```
+
+```js
+const apiUrl = "http://www.bilibili.com";
+
+async function getBilibili() {
+    const response = await fetch(apiUrl);
+    const text = await response.text();
+    console.log(text);
+}
+
+getBilibili();
+```
+
+## Async & Await (Chanllenge)
+
+```js
+function resolveAfter3Seconds() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("resolved");
+        }, 3000);
+    });
+}
+async function asyncCall() {
+    const result = await resolveAfter3Seconds();
+    console.log(result);
+}
+
+asyncCall();
+```
+
+## Sets
+
+Unique list
+
+```js
+const exampleSet = new Set([1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]);
+
+for (let element of exampleSet) {
+    console.log(element);
+} // 1 2 3
+
+console.log(exampleSet); // Set(3) { 1, 2, 3 }
+console.log(exampleSet.size); // 3
+console.log(exampleSet.has(2)); // true
+console.log(exampleSet.add(5)); // Set(4) { 1, 2, 3, 5 }
+console.log(exampleSet); // Set(4) { 1, 2, 3, 5 }
+console.log(exampleSet.delete(5)); // true
+console.log(exampleSet); // Set(3) { 1, 2, 3 }
+console.log(exampleSet.clear()); // undefined
+console.log(exampleSet); // Set(0) {}
+console.log(exampleSet.size); // 0
+
+/* 
+☺  node index.js                                                                                                                     main ✗
+1
+2
+3
+Set(3) { 1, 2, 3 }
+3
+true
+Set(4) { 1, 2, 3, 5 }
+Set(4) { 1, 2, 3, 5 }
+true
+Set(3) { 1, 2, 3 }
+undefined
+Set(0) {}
+0 
+*/
 ```
