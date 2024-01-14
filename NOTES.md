@@ -358,5 +358,42 @@ console.log(example) // { firstName: 'Harry' }
 
 ## `import` & `export`
 
+-   commonjs
 
+    ```js
+    // example.js
+    const data = [1, 2, 3]
+    module.exports = data
+    ```
 
+    ```js
+    // index.js
+    const data = require("./example.js")
+
+    console.log(data) // [1,2,3]
+
+    data.push(4)
+
+    console.log(data) // [1,2,3,4]
+    ```
+
+-   moudule
+
+    ```json
+    // package.json
+    {
+        "type": "module"
+    }
+    ```
+
+    ```js
+    // example.js
+    export const data = [1, 2, 3]
+    ```
+
+    ```js
+    import { data } from "./example.js"
+
+    console.log(data) // [1, 2, 3]
+    ```
+## `padStart()` & `padEnd()`
