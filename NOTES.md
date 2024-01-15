@@ -232,9 +232,9 @@ add(12, 3, 4, 5);
 ## Default Params
 
 ```js
-// element
 function add(numArray) {
     let total = 0;
+    // element is the default param
     numArray.forEach((element) => {
         total += element;
     });
@@ -353,8 +353,7 @@ const example = {};
 example.firstName = "Harry";
 console.log(example); // { firstName: 'Harry' }
 ```
-
-> You cannot override the data types of a "const"
+> You cannot override a `const` data
 
 ## `import` & `export`
 
@@ -508,13 +507,13 @@ add(); // { name: 'Dylan' }
 > And in an array:
 >
 > ```javascript
-> const arr = ["element1", "element2"];
+> const arr = ["element1", "element2",];
 > ```
 >
 > And in a function's parameters:
 >
 > ```javascript
-> function func(param1, param2) {
+> function func(param1, param2,) {
 >     // function body
 > }
 > ```
